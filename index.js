@@ -74,8 +74,8 @@ function writeToFile(fileName, data) {
         }
         });
     }
-const fileName= `${data.name}README.md`
-
+const fileName = `${data.name}README.md`
+const data = 
 // TODO: Create a function to initialize app
 function init() {}
 
