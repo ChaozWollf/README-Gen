@@ -76,6 +76,8 @@ function writeToFile(fileName, data) {
     }
 const fileName = `${data.name}README.md`
 const data = 
+fs.appendFile(fileName,`##${data.name}`, (err) => err? console.log(err): console.log());
+fs.appendFile(fileName, `##Description\n ${data.description.input}`, (err) => err? console.log(err):console.log ());
 // TODO: Create a function to initialize app
 function init() {}
 
