@@ -37,7 +37,7 @@ inquirer
             message: 'How is this project to be used?'
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'License',
             choices: ['MIT', 'None']
         },
@@ -62,22 +62,23 @@ inquirer
             name:'email',
             message:'what is your email?(this will be used for questions people may have)'
         }
-    ])
-
+    ]).then ((answers) => { fs.writeFile('log.text', `${answers.name}`, (err) => err? console.error(err): console.log('Success!'))
+});
+// console.log(answers);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data,(err) =>{
         if (err) {
-            consol.error('Error writing file', err);
+            console.error('Error writing file', err);
         } else{
             console.log ('Data written to file sucessfully')
         }
         });
     }
-const fileName = `${data.name}README.md`
-const data = 
-fs.appendFile(fileName,`##${data.name}`, (err) => err? console.log(err): console.log());
-fs.appendFile(fileName, `##Description\n ${data.description.input}`, (err) => err? console.log(err):console.log ());
+// const fileName = `${data.name}README.md`
+// const data = 
+// fs.appendFile(fileName,`##${data.name}`, (err) => err? console.log(err): console.log());
+// fs.appendFile(fileName, `##Description\n ${data.description.input}`, (err) => err? console.log(err):console.log ());
 // TODO: Create a function to initialize app
 function init() {}
 
