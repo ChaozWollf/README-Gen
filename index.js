@@ -109,7 +109,7 @@ inquirer
         ## Tests ${answer.tests}
 
         ## Questions? My Github: github.com/${answer.github}
-                                            ${answers.email}
+                                 ${answers.email}
         `
          ;
             
