@@ -19,6 +19,11 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+function writeToFile(fileName, data) {
+    console.log('writeToFile');
+    return fs.writeFileSync(fileName, data)
+}
+
 // TODO: Create an array of questions for user input
 const questions = []
 inquirer
@@ -81,11 +86,11 @@ inquirer
             message: 'what is your email?(this will be used for questions people may have)'
         }
     ]).then((answers) => {
-       generateMarkdown({ ...answers});
+        writeToFile(`README.md`, generateMarkdown({ ...answers}));
         
-       fs.writeFile(`README.md`, template(answers),
-            // (err) =>err ? console.error(err):console.log('Sucess!')
-        );
+    //    fs.writeFile(`README.md`, template(answers),
+    //         // (err) =>err ? console.error(err):console.log('Sucess!')
+    //     );
     });
     // fs.writeFile(`README.md`, template(answers), 
     // (err) =>err ? console.error(err):console.log('Sucess!')

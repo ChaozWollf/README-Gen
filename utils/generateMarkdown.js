@@ -17,9 +17,9 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.name}`
     function template(answer) {
-            const fileName = `${ answers.name } README.md`
+            const fileName = `${answers.name } README.md`
             const data = `
-        # ${ answer.name }
+        # ${answer.name}
         
         ## Description ${ answer.description }
         
