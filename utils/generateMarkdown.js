@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {if ((data.license) === 'MIT'){return
+function renderLicenseBadge(license) {if ((license.license) == 'MIT'){return
   "https://img.shields.io/badge/licence-MIT-red";
 } else {
   return "   "
@@ -50,7 +50,7 @@ function generateMarkdown(data) {
         
         ## Tests ${data.tests}
 
-        ## Questions ? My Github: github.com / ${data.github}
+        ## Questions ? My Github: https:github.com/${data.github}
                                  ${data.email}
         `
  };
