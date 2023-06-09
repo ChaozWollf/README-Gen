@@ -15,10 +15,53 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.name}`
+    function template(answer) {
+            const fileName = `${ answers.name } README.md`
+            const data = `
+        # ${ answer.name }
+        
+        ## Description ${ answer.description }
+        
+        
+        
+        
+        ## Installation instructions ${ answer.installation }
 
-`;
-}
+        
+        
+        
+        ## Usage ${ answer.usage }
+
+        
+        
+        ## License${ answer.license }
+       
+        ## Special thanks to these contributors ${ answer.contributing }
+
+        
+        
+        
+        ## Tests ${ answer.tests }
+
+        ## Questions ? My Github: github.com / ${ answer.github }
+                                 ${ answers.email }
+        `
+         ;
+            
+        module.exports = {
+            fileName,
+            data,
+        };
+        console.log(fileName);
+        console.log(data);
+    }
+
+    template(answers);
+};
+
+;
+
 
 module.exports = generateMarkdown;
 

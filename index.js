@@ -81,55 +81,13 @@ inquirer
             message: 'what is your email?(this will be used for questions people may have)'
         }
     ]).then((answers) => {
-        function template(answer) {
-            const fileName = `${answers.name}README.md`
-            const data = `
-        # ${answer.name}
-        
-        ## Description ${answer.description}
-        
-        
-        
-        
-        ## Installation instructions ${answer.installation}
+       generateMarkdown({ ...answers});
 
-        
-        
-        
-        ## Usage ${answer.usage}
-
-        
-        
-        ## License${answer.license}
-       
-        ## Special thanks to these contributors ${answer.contributing}
-
-        
-        
-        
-        ## Tests ${answer.tests}
-
-        ## Questions? My Github: github.com/${answer.github}
-                                 ${answers.email}
-        `
-         ;
-            
-        module.exports = {
-            fileName,
-            data,
-        };
-        console.log(fileName);
-        console.log(data);
-    }
-
-    template(answers);
-});
-        // TODO: Create a function to write README file
-    //    fs.writeFile(`${answer.name}README.md`, generateMarkdown)
-    
-
-
-// TODO: Create a function to initialize app
+    });
+    fs.writeFile(`README.md`, template(answers), 
+    // (err) =>err ? console.error(err):console.log('Sucess!')
+    );
+    // TODO: Create a function to initialize app
 function init() { }
 
 // Function call to initialize app
@@ -154,3 +112,50 @@ init();
 
         // fs.appendFile(fileName,`##${data.name}`, (err) => err? console.log(err): console.log());
 // fs.appendFile(fileName, `##Description\n ${data.description.input}`, (err) => err? console.log(err):console.log ());
+
+//         function template(answer) {
+//             const fileName = `${answers.name}README.md`
+//             const data = `
+//         # ${answer.name}
+        
+//         ## Description ${answer.description}
+        
+        
+        
+        
+//         ## Installation instructions ${answer.installation}
+
+        
+        
+        
+//         ## Usage ${answer.usage}
+
+        
+        
+//         ## License${answer.license}
+       
+//         ## Special thanks to these contributors ${answer.contributing}
+
+        
+        
+        
+//         ## Tests ${answer.tests}
+
+//         ## Questions? My Github: github.com/${answer.github}
+//                                  ${answers.email}
+//         `
+//          ;
+            
+//         module.exports = {
+//             fileName,
+//             data,
+//         };
+//         console.log(fileName);
+//         console.log(data);
+//     }
+
+//     template(answers);
+// });
+        // TODO: Create a function to write README file
+    //    fs.writeFile(`${answer.name}README.md`, generateMarkdown)
+    
