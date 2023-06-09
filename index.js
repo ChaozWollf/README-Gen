@@ -82,11 +82,14 @@ inquirer
         }
     ]).then((answers) => {
        generateMarkdown({ ...answers});
-
+        
+       fs.writeFile(`README.md`, template(answers),
+            // (err) =>err ? console.error(err):console.log('Sucess!')
+        );
     });
-    fs.writeFile(`README.md`, template(answers), 
+    // fs.writeFile(`README.md`, template(answers), 
     // (err) =>err ? console.error(err):console.log('Sucess!')
-    );
+    // );
     // TODO: Create a function to initialize app
 function init() { }
 
