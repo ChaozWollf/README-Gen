@@ -24,8 +24,8 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(fileName, data)
 }
 
-// TODO: Create an array of questions for user input
-const questions = []
+// // TODO: Create an array of questions for user input
+// const questions = []
 inquirer
     .prompt([
         {
