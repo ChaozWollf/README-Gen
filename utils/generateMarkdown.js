@@ -1,10 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {if ((license.license) == 'MIT'){return
-  "https://img.shields.io/badge/licence-MIT-red";
+function renderLicenseBadge(license) {if ((license.license) == 'MIT'){return "![Github license](https://img.shields.io/badge/licence-MIT-red.svg)";
 } else {
-  return "   "
-}
+  return 'Empty string'   
+};
 };
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -12,20 +11,26 @@ function renderLicenseLink(license) {
   if ((data.license) === MIT){
     return "https://drewdevault.com/2022/02/07/Free-software-licenses-MIT.html"
   } else{
-    console.log('empty string')
-  }
+    return 'Empty string'
+  };
   
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  renderLicenseBadge(license) 
+  renderLicenseLink(license)
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.name}
     
-          ## Description 
+  ${renderLicenseSection(data)}
+          
+  
+        ## Description 
           ${data.description}
         
         ## Installation instructions ${data.installation}
